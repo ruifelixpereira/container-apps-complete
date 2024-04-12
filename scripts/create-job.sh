@@ -36,11 +36,11 @@ fi
 #
 # Create/Get a container app job
 #
-#job_query=$(az containerapp job list --query "[?name=='$JOB_NAME-job']")
+#job_query=$(az containerapp job list --query "[?name=='$APP_NAME-job']")
 #if [ "$job_query" == "[]" ]; then
-    echo -e "\nCreating container app job '$JOB_NAME-job'"
-    az containerapp job create --name "$JOB_NAME-job" --resource-group "$RESOURCE_GROUP" \
-      --environment "$JOB_NAME-env" \
+    echo -e "\nCreating container app job '$APP_NAME-job'"
+    az containerapp job create --name "$APP_NAME-job" --resource-group "$RESOURCE_GROUP" \
+      --environment "$APP_NAME-env" \
       --trigger-type "Schedule" \
       --replica-timeout 1800 \
       --replica-retry-limit 3 \
@@ -54,5 +54,5 @@ fi
       --memory "0.5Gi" \
       --cron-expression "$JOB_CRON_EXPRESSION"
 #else
-#    echo "Container app job $JOB_NAME-job already exists."
+#    echo "Container app job $APP_NAME-job already exists."
 #fi

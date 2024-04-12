@@ -10,7 +10,7 @@ env:
   AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
   CONTAINER_REGISTRY_NAME: ${{ vars.CONTAINER_REGISTRY_NAME }}
   RESOURCE_GROUP: ${{ vars.RESOURCE_GROUP }}
-  JOB_NAME: ${{ vars.JOB_NAME }}
+  APP_NAME: ${{ vars.APP_NAME }}
   JOB_IMAGE_NAME: ${{ vars.JOB_IMAGE_NAME }}
   JOB_CRON_EXPRESSION: ${{ vars.JOB_CRON_EXPRESSION }}
 
@@ -49,10 +49,10 @@ jobs:
           acrName: ${{ vars.CONTAINER_REGISTRY_NAME }}
           acrUsername: ${{ env.REGISTRY_USERNAME }}
           acrPassword: ${{ env.REGISTRY_PASSWORD }}
-          containerAppName: ${{ vars.CONTAINER_APP_NAME }}
+          containerAppName: ${{ vars.APP_NAME }}
           resourceGroup: ${{ vars.RESOURCE_GROUP }}
           location: ${{ vars.LOCATION }}
-          targetPort: ${{ vars.TARGET_PORT }}
+          targetPort: ${{ vars.APP_TARGET_PORT }}
   
       # Login against a Docker registry
       # https://github.com/docker/login-action
