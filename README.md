@@ -22,7 +22,7 @@ The action supports the following scenarios:
 Using npm:
 
 ```bash	
-cd src
+cd src/app
 npm run start
 ```
 
@@ -47,7 +47,7 @@ curl -X GET -H "Content-Type: application/json" http://localhost:8080/albums
 Using npm:
 
 ```bash	
-cd src
+cd src/job
 URL="https://reqres.in/api/users?page=2"
 npm run start
 ```
@@ -78,6 +78,7 @@ You can edit the variables inside the script to customize the names of the resou
 ```bash
 cd scripts
 az login
+az account set -s xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ./initial-setup.sh
 ```
 
